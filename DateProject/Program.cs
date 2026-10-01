@@ -19,10 +19,7 @@ namespace DateProject
 
             foreach(Holiday h in list) {
                 Console.WriteLine($"{h.TheDate} - {h.Name}");
-            }
-
-
-            
+            }            
         }
     }
 }

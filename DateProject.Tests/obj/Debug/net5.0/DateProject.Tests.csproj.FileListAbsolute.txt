@@ -101,3 +101,7 @@ C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject.Tests\obj\Debug\net5.0\ref\DateProject.Tests.dll
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject.Tests\obj\Debug\net5.0\DateProject.Tests.pdb
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject.Tests\obj\Debug\net5.0\DateProject.Tests.genruntimeconfig.cache
+C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject.Tests\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject.Tests\bin\Debug\net5.0\Moq.dll
+C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject.Tests\bin\Debug\net5.0\System.Diagnostics.EventLog.dll
+C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject.Tests\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll

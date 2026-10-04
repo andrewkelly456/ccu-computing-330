@@ -1,5 +1,7 @@
 using System;
+using Moq;
 using Xunit;
+using System.Collections.Generic;
 
 namespace DateProject.Tests
 {
@@ -131,5 +133,61 @@ namespace DateProject.Tests
         //Add tests for MonthIs31DaysMax and DayNotBetween1And31
         //Add test for MonthIsFebruary and DayBetween1And28
         //Add test for MonthIsFebrurary and DayNotBetween1And28
+
+        [Fact]
+        public void IsToday_DateMatchesToday_ReturnsTrue()
+        {
+            //Arrange
+            var systemDateProvider = new Mock<ISystemDateProvider>();
+            systemDateProvider.Setup(m=>m.GetToday()).Returns(new Date(2020,01, 01));
+
+            // set up new date
+            Date date = new Date(2020, 01, 01, systemDateProvider.Object);
+            //Act
+            bool isToday = date.IsToday();
+            //Assert
+            Assert.True(isToday);
+        }
+
+        [Fact]
+        public void IsToday_DateDoesNotMatchToday_ReturnsTrue()
+        {
+            //Arrange
+            var systemDateProvider = new Mock<ISystemDateProvider>();
+            systemDateProvider.Setup(m=>m.GetToday()).Returns(new Date(2020,01, 01));
+
+            // set up new date
+            Date date = new Date(2020, 01, 02, systemDateProvider.Object);
+            //Act
+            bool isToday = date.IsToday();
+            //Assert
+            Assert.False(isToday);
+        }
+
+        [Fact]
+        public void WhatHolidayIsOnThisDay_FindOneHoliday_ReturnHolidayName
+        {
+            //Arrange
+            var holidayProvider = new Mock<IHolidayProvider>();
+            List<Holiday> holidays = new List<Holiday>()
+            {
+              new Holiday()
+              {
+                  TheDate=new Date(2020, 12, 25), 
+                  Name="Christmas"
+              },
+              new Holiday()
+              {
+                  TheDate=new Date(2020, 10, 31),
+                  Name="Halloween"
+              }  
+            };
+            holidayProvider.Setup(m=>m.GetHolidays(2020)).Returns(holidays);
+            Date date = new Date(2020, 10, 31,holidayProvider.Object);
+            //Act
+            string foundHoliday=date.WhatHolidayIsOnThisDay();
+            //Assert
+            Assert.Equal("Halloween", foundHoliday);
+        }
     }
 }

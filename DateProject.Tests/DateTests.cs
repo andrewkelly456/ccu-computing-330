@@ -165,7 +165,7 @@ namespace DateProject.Tests
         }
 
         [Fact]
-        public void WhatHolidayIsOnThisDay_FindOneHoliday_ReturnHolidayName
+        public void WhatHolidayIsOnThisDay_FindOneHoliday_ReturnHolidayName()
         {
             //Arrange
             var holidayProvider = new Mock<IHolidayProvider>();
@@ -188,6 +188,32 @@ namespace DateProject.Tests
             string foundHoliday=date.WhatHolidayIsOnThisDay();
             //Assert
             Assert.Equal("Halloween", foundHoliday);
+        }
+
+        [Fact]
+        public void WhatHolidayIsOnThisDay_FindNoHoliday_ReturnsNull()
+        {
+            //Arrange
+            var holidayProvider = new Mock<IHolidayProvider>();
+            List<Holiday> holidays = new List<Holiday>()
+            {
+              new Holiday()
+              {
+                  TheDate=new Date(2020, 12, 25), 
+                  Name="Christmas"
+              },
+              new Holiday()
+              {
+                  TheDate=new Date(2020, 10, 31),
+                  Name="Halloween"
+              }  
+            };
+            holidayProvider.Setup(m=>m.GetHolidays(2020)).Returns(holidays);
+            Date date = new Date(2020, 10, 30,holidayProvider.Object);
+            //Act
+            string foundHoliday=date.WhatHolidayIsOnThisDay();
+            //Assert
+            Assert.Null(foundHoliday);
         }
     }
 }

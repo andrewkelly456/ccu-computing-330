@@ -5,7 +5,7 @@ using System.IO;
 
 namespace DateProject {
 
-    public class HolidayProvider {
+    public class HolidayProvider : IHolidayProvider {
         public  List<Holiday> GetHolidays(int year) {
             List<Holiday> list1 = new List<Holiday>() ;
 

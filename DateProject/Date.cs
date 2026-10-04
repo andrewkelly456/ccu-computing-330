@@ -4,6 +4,7 @@ namespace DateProject{
     public class Date {
 
         private ISystemDateProvider _provider;
+        private IHolidayProvider _holidayProvider;
 
         private int _year;
         private int _month;
@@ -97,12 +98,15 @@ namespace DateProject{
             }
 
         _provider = new MySystemDateProvider();
-
-
-            
+        _holidayProvider = new HolidayProvider();
+   
         }
         public Date(int year, int month,int day, ISystemDateProvider provider ):this(year,month,day) {
             _provider=provider;
+        }
+
+        public Date(int year, int month,int day, IHolidayProvider holidayProvider ):this(year,month,day) {
+            _holidayProvider=holidayProvider;
         }
 
         public override string ToString()
@@ -120,21 +124,12 @@ namespace DateProject{
                 return false; 
         }
 
-            public bool IsToday(bool throwException) {
-            //System.DateTime today = System.DateTime.UtcNow;
-            Date today = _provider.GetToday();
-    
-            
-            if(this.Month == today.Month && this.Day == today.Day)
-                return true;
-            else
-                return false; 
-        }
         public string WhatHolidayIsOnThisDay() {
             //assume this is an external dependency - code that you don't control or test
             //can't predict what these dates will be when writing tests
-            HolidayProvider _holidayProvider = new HolidayProvider();
             List<Holiday> list = _holidayProvider.GetHolidays(Year);
+
+
 
             foreach(Holiday holiday in list) {
                 //add code later to handle if two holidays are in the list for this day
@@ -193,5 +188,10 @@ namespace DateProject{
             System.DateTime now = System.DateTime.UtcNow;
             return new Date(now.Year,now.Month,now.Day);
         }
+    }
+
+    public interface IHolidayProvider
+    {
+        public List<Holiday> GetHolidays(int year);
     }
 }

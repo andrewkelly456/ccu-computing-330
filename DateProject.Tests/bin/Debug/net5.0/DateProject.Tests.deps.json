@@ -1150,7 +1150,10 @@
           "Moq": "4.21.0"
         },
         "runtime": {
-          "DateProject.dll": {}
+          "DateProject.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

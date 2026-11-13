@@ -5,6 +5,7 @@ namespace DateProject{
 
         private ISystemDateProvider _provider;
         private IHolidayProvider _holidayProvider;
+        private IBirthdayProvider _birthdayProvider;
 
         private int _year;
         private int _month;
@@ -43,6 +44,15 @@ namespace DateProject{
                     case 1: return "Jan"; 
                     case 2: return "Feb"; 
                     case 3: return "Mar"; 
+                    case 4: return "Apr";
+                    case 5: return "May";
+                    case 6: return "Jun";
+                    case 7: return "Jul";
+                    case 8: return "Aug";
+                    case 9: return "Sep";
+                    case 10: return "Oct";
+                    case 11: return "Nov";
+                    case 12: return "Dec";
                     default: return "Unknown"; 
                 }
             }
@@ -99,7 +109,8 @@ namespace DateProject{
 
         _provider = new MySystemDateProvider();
         _holidayProvider = new HolidayProvider();
-   
+        _birthdayProvider = new BirthdayProvider();
+
         }
         public Date(int year, int month,int day, ISystemDateProvider provider ):this(year,month,day) {
             _provider=provider;
@@ -109,12 +120,16 @@ namespace DateProject{
             _holidayProvider=holidayProvider;
         }
 
+        public Date(int year, int month,int day, IBirthdayProvider birthdayProvider ):this(year,month,day) {
+            _birthdayProvider=birthdayProvider;
+        }
+
         public override string ToString()
         {
             return $"{Year}-{Month}-{Day}";
         }
         public bool IsToday() {
-            //System.DateTime today = System.DateTime.UtcNow;
+            // System.DateTime today = System.DateTime.UtcNow;
             Date today = _provider.GetToday();
     
             
@@ -140,7 +155,30 @@ namespace DateProject{
 
         }
 
-        
+        public List<string> WhatHolidaysAreOnThisDay() {
+            List<Holiday> list = _holidayProvider.GetHolidays(Year);
+            List<string> names = new List<string>();
+
+            foreach(Holiday holiday in list) {
+                if(holiday.TheDate.Month == Month && holiday.TheDate.Day==Day)
+                    names.Add(holiday.Name);
+            }
+            return names;
+        }
+
+        public List<string> WhoseBirthdayIsIt() {
+            List<Birthday> list = _birthdayProvider.GetBirthdays();
+            List<string> names = new List<string>();
+
+            foreach(Birthday birthday in list) {
+                //only month and day matter - the birth year is different from this date's year
+                if(birthday.TheDate.Month == Month && birthday.TheDate.Day==Day)
+                    names.Add(birthday.Name);
+            }
+            return names;
+        }
+
+
         public Date AddOneMonth(Date theDate) {
              if(theDate.Month==12) {
                     return new Date(theDate.Year+1, 1, InvalidDayForMonth(1,theDate.Day)? MaxDayOfMonth(1):theDate.Day);
@@ -161,7 +199,7 @@ namespace DateProject{
                 default: return 31;
             }
         }
-        private bool InvalidDayForMonth(int day, int month) {
+        private bool InvalidDayForMonth(int month, int day) {
             switch(month) {
                 case 9: 
                 case 4:
@@ -193,5 +231,10 @@ namespace DateProject{
     public interface IHolidayProvider
     {
         public List<Holiday> GetHolidays(int year);
+    }
+
+    public interface IBirthdayProvider
+    {
+        public List<Birthday> GetBirthdays();
     }
 }

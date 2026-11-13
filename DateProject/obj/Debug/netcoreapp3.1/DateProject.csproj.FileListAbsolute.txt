@@ -4,7 +4,6 @@ C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\bin\Debug\netcoreapp3.1\DateProject.runtimeconfig.dev.json
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\bin\Debug\netcoreapp3.1\DateProject.dll
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\bin\Debug\netcoreapp3.1\DateProject.pdb
-C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProject.csprojAssemblyReference.cache
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProject.AssemblyInfoInputs.cache
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProject.AssemblyInfo.cs
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProject.csproj.CoreCompileInputs.cache
@@ -15,4 +14,7 @@ C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\bin\Debug\netcoreapp3.1\Moq.dll
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
 C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll
-C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProject.csproj.CopyComplete
+C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProject.csproj.AssemblyReference.cache
+C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProject.sourcelink.json
+C:\Users\Andrew\Desktop\Coastal Senior Year\CSCI 330\source\repos\CustomDate\ccu-computing-330\DateProject\obj\Debug\netcoreapp3.1\DateProj.0A48C6EA.Up2Date
